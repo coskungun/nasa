@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-Nasa-NasaUITests/Pods-Nasa-NasaUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AlamofireURLCache5/AlamofireURLCache5.framework
+${BUILT_PRODUCTS_DIR}/InfiniteCarouselCollectionView/InfiniteCarouselCollectionView.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
