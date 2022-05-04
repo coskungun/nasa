@@ -11,8 +11,8 @@
 		009DD928281C27E300023A4D /* InfinityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD927281C27E300023A4D /* InfinityViewController.swift */; };
 		009DD92B281C280300023A4D /* InfinityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD92A281C280300023A4D /* InfinityViewModel.swift */; };
 		009DD92D281C280E00023A4D /* InfinityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD92C281C280E00023A4D /* InfinityModel.swift */; };
-		009DD932281C32A300023A4D /* InfinityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD930281C32A300023A4D /* InfinityCollectionViewCell.swift */; };
-		009DD933281C32A300023A4D /* InfinityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009DD931281C32A300023A4D /* InfinityCollectionViewCell.xib */; };
+		009DD9372822C5FE00023A4D /* MainTabbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9362822C5FE00023A4D /* MainTabbarViewModel.swift */; };
+		009DD9392822C60900023A4D /* MainTabbarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9382822C60900023A4D /* MainTabbarModel.swift */; };
 		00EFACE7281C19A90016A850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFACE6281C19A90016A850 /* AppDelegate.swift */; };
 		00EFACE9281C19A90016A850 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFACE8281C19A90016A850 /* SceneDelegate.swift */; };
 		00EFACEB281C19A90016A850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFACEA281C19A90016A850 /* ViewController.swift */; };
@@ -51,8 +51,8 @@
 		009DD927281C27E300023A4D /* InfinityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityViewController.swift; sourceTree = "<group>"; };
 		009DD92A281C280300023A4D /* InfinityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityViewModel.swift; sourceTree = "<group>"; };
 		009DD92C281C280E00023A4D /* InfinityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityModel.swift; sourceTree = "<group>"; };
-		009DD930281C32A300023A4D /* InfinityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinityCollectionViewCell.swift; sourceTree = "<group>"; };
-		009DD931281C32A300023A4D /* InfinityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfinityCollectionViewCell.xib; sourceTree = "<group>"; };
+		009DD9362822C5FE00023A4D /* MainTabbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewModel.swift; sourceTree = "<group>"; };
+		009DD9382822C60900023A4D /* MainTabbarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarModel.swift; sourceTree = "<group>"; };
 		00EFACE3281C19A90016A850 /* Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EFACE6281C19A90016A850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00EFACE8281C19A90016A850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,12 +111,20 @@
 			isa = PBXGroup;
 			children = (
 				009DD927281C27E300023A4D /* InfinityViewController.swift */,
-				009DD930281C32A300023A4D /* InfinityCollectionViewCell.swift */,
-				009DD931281C32A300023A4D /* InfinityCollectionViewCell.xib */,
 				009DD92A281C280300023A4D /* InfinityViewModel.swift */,
 				009DD92C281C280E00023A4D /* InfinityModel.swift */,
 			);
 			path = Infinity;
+			sourceTree = "<group>";
+		};
+		009DD9352822C5E400023A4D /* MainTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				009DD925281C247800023A4D /* MainTabbarController.swift */,
+				009DD9362822C5FE00023A4D /* MainTabbarViewModel.swift */,
+				009DD9382822C60900023A4D /* MainTabbarModel.swift */,
+			);
+			path = MainTabbar;
 			sourceTree = "<group>";
 		};
 		00EFACDA281C19A90016A850 = {
@@ -149,7 +157,7 @@
 				00EFACE8281C19A90016A850 /* SceneDelegate.swift */,
 				00EFACEA281C19A90016A850 /* ViewController.swift */,
 				009DD929281C27ED00023A4D /* Infinity */,
-				009DD925281C247800023A4D /* MainTabbarController.swift */,
+				009DD9352822C5E400023A4D /* MainTabbar */,
 				00EFACEC281C19A90016A850 /* Main.storyboard */,
 				00EFACEF281C19AB0016A850 /* Assets.xcassets */,
 				00EFACF1281C19AB0016A850 /* LaunchScreen.storyboard */,
@@ -316,7 +324,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009DD933281C32A300023A4D /* InfinityCollectionViewCell.xib in Resources */,
 				00EFACF3281C19AB0016A850 /* LaunchScreen.storyboard in Resources */,
 				00EFACF0281C19AB0016A850 /* Assets.xcassets in Resources */,
 				00EFACEE281C19A90016A850 /* Main.storyboard in Resources */,
@@ -450,13 +457,14 @@
 				009DD92B281C280300023A4D /* InfinityViewModel.swift in Sources */,
 				00EFACEB281C19A90016A850 /* ViewController.swift in Sources */,
 				00EFACE7281C19A90016A850 /* AppDelegate.swift in Sources */,
+				009DD9392822C60900023A4D /* MainTabbarModel.swift in Sources */,
 				009DD926281C247800023A4D /* MainTabbarController.swift in Sources */,
 				00EFACE9281C19A90016A850 /* SceneDelegate.swift in Sources */,
 				00EFAD1A281C1D180016A850 /* NetworkHelpers.swift in Sources */,
-				009DD932281C32A300023A4D /* InfinityCollectionViewCell.swift in Sources */,
 				009DD92D281C280E00023A4D /* InfinityModel.swift in Sources */,
 				00EFAD19281C1D180016A850 /* Constant.swift in Sources */,
 				009DD928281C27E300023A4D /* InfinityViewController.swift in Sources */,
+				009DD9372822C5FE00023A4D /* MainTabbarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

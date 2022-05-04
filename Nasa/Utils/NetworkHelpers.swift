@@ -28,7 +28,7 @@ protocol NetworkServiceProtocol {
 public struct NetworkHelper: NetworkServiceProtocol {
     func getAllData(complation: @escaping (ApiResult<InfinityModel>) -> Void) {
         
-        AF.request(Constant.API_URL+Constant.API_KEY+Constant.API_PAGINATION,refreshCache:false).responseJSON(completionHandler: { response in
+        AF.request(Constant.API_URL+Constant.API_ROVER_TYPE_CURIOSITY+Constant.API_VISIBLE_TYPE+Constant.API_KEY+Constant.API_PAGINATION,refreshCache:false).responseJSON(completionHandler: { response in
             switch response.result {
             case .success:
                 do {

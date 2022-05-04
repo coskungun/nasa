@@ -78,15 +78,11 @@ class InfinityViewController: UIViewController,InfinityViewModelDelegate {
         collectionView.reloadData()
         collectionView.backgroundColor = .clear
         collectionView.carouselDataSource = self
-        collectionView.isAutoscrollEnabled = true
+        collectionView.isAutoscrollEnabled = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.autoscrollTimeInterval = 3.0
         let size = UIScreen.main.bounds.size
         collectionView.flowLayout.itemSize = CGSize(width: size.width, height: size.height)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("ellendi")
     }
 }
 

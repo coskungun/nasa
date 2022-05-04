@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="206" y="424"/>
         </scene>
-        <!--Curiosity-->
+        <!--View Controller-->
         <scene sceneID="Pe9-mT-CYb">
             <objects>
                 <viewController id="9U1-vk-deL" customClass="ViewController" customModule="Nasa" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,11 +34,11 @@
                         <viewLayoutGuide key="safeArea" id="y64-bF-YdD"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Curiosity" image="doc.circle" catalog="system" id="csN-TQ-eUR"/>
+                    <navigationItem key="navigationItem" id="l0j-bL-BFn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CkZ-jA-gEw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="206" y="-229"/>
+            <point key="canvasLocation" x="859" y="-229"/>
         </scene>
         <!--Infinity-->
         <scene sceneID="2wr-7t-r5X">
@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iB8-03-IqF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="-229"/>
+            <point key="canvasLocation" x="1784.057971014493" y="-229.01785714285714"/>
         </scene>
         <!--Main Tabbar Controller-->
         <scene sceneID="EqO-HX-4YT">
@@ -68,7 +68,7 @@
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9U1-vk-deL" kind="relationship" relationship="viewControllers" id="beg-Dn-ekS"/>
+                        <segue destination="c8e-Og-XR3" kind="relationship" relationship="viewControllers" id="beg-Dn-ekS"/>
                         <segue destination="Dca-GD-PQi" kind="relationship" relationship="viewControllers" id="iYp-E8-7To"/>
                         <segue destination="rMm-VC-rbO" kind="relationship" relationship="viewControllers" id="3k4-dP-v0S"/>
                         <segue destination="GV8-jw-vfI" kind="relationship" relationship="viewControllers" id="g8N-fz-xSw"/>
@@ -92,6 +92,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9d-8l-HqO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="874" y="424"/>
+        </scene>
+        <!--Curiosity-->
+        <scene sceneID="gxH-HC-k9S">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c8e-Og-XR3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Curiosity" image="doc.circle" catalog="system" id="csN-TQ-eUR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oyL-yN-QS5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9U1-vk-deL" kind="relationship" relationship="rootViewController" id="vEq-yf-HTd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edn-f1-iE1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.79710144927537" y="-229.01785714285714"/>
         </scene>
     </scenes>
     <resources>
