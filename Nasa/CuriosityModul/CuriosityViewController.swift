@@ -11,16 +11,16 @@ import InfiniteCarouselCollectionView
 import Kingfisher
 
 
-class CuriosityViewController: UIViewController,InfinityViewModelDelegate {
+class CuriosityViewController: UIViewController,CuriosityViewModelDelegate {
     @IBOutlet weak var lblNoData: UILabel!
-    var viewModel: InfinityViewModel = InfinityViewModel()
+    var viewModel: CuriosityViewModel = CuriosityViewModel()
     let pageControl = UIPageControl()
     let collectionView = CarouselCollectionView(frame: .zero, collectionViewFlowLayout: UICollectionViewFlowLayout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
-        viewModel = InfinityViewModel()
+        viewModel = CuriosityViewModel()
         viewModel.delegate = self
         viewModel.load(view: self.view)
         viewModel.fetchData()
@@ -63,7 +63,7 @@ class CuriosityViewController: UIViewController,InfinityViewModelDelegate {
         self.view.bringSubviewToFront(pageControl)
     }
     
-    func handleViewModelOutput(_ output: InfinityModelViewModelOutput) {
+    func handleViewModelOutput(_ output: CuriosityModelViewModelOutput) {
         switch output {
         case .isErrorConnection( _):
             print("Internet connection error message")
