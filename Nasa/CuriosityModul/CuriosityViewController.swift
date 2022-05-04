@@ -78,6 +78,7 @@ class CuriosityViewController: UIViewController,CuriosityViewModelDelegate {
     }
     
     func setupUI(){
+        self.lblNoData.text = NSLocalizedString("NoData", comment: "")
         pageControl.alpha = 0
         collectionView.alpha = 0
         view.addSubview(collectionView)
@@ -94,6 +95,8 @@ class CuriosityViewController: UIViewController,CuriosityViewModelDelegate {
         collectionView.autoscrollTimeInterval = 3.0
         let size = UIScreen.main.bounds.size
         collectionView.flowLayout.itemSize = CGSize(width: size.width, height: size.height)
+        
+        
     }
 }
 
@@ -113,6 +116,7 @@ extension CuriosityViewController: CarouselCollectionViewDataSource {
     
     func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, didSelectItemAt index: Int) {
         print("Did select item at \(index)")
+        DetailSingleton.sharedInstance.showModal(vc: self, pData: viewModel.arrData?[index])
     }
     
     func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, didDisplayItemAt index: Int) {

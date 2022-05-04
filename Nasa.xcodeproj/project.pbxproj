@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		00257CA428231ED6007DCBE1 /* CVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00257CA328231ED6007DCBE1 /* CVCell.swift */; };
 		00257CAC28232355007DCBE1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00257CAA28232355007DCBE1 /* Localizable.strings */; };
+		00257CB1282329C1007DCBE1 /* DetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00257CB0282329C1007DCBE1 /* DetailModal.swift */; };
+		00257CB3282329CC007DCBE1 /* DetailModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00257CB2282329CC007DCBE1 /* DetailModal.xib */; };
+		00257CB5282329F9007DCBE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00257CB4282329F9007DCBE1 /* Extensions.swift */; };
+		00257CB728232A26007DCBE1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00257CB628232A26007DCBE1 /* Helpers.swift */; };
+		00257CB928232B26007DCBE1 /* DetailSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00257CB828232B26007DCBE1 /* DetailSingleton.swift */; };
 		009DD926281C247800023A4D /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD925281C247800023A4D /* MainTabbarController.swift */; };
 		009DD9372822C5FE00023A4D /* MainTabbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9362822C5FE00023A4D /* MainTabbarViewModel.swift */; };
 		009DD9392822C60900023A4D /* MainTabbarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9382822C60900023A4D /* MainTabbarModel.swift */; };
@@ -61,6 +66,11 @@
 		00257CAB28232355007DCBE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00257CAD28232368007DCBE1 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00257CAE2823236A007DCBE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		00257CB0282329C1007DCBE1 /* DetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModal.swift; sourceTree = "<group>"; };
+		00257CB2282329CC007DCBE1 /* DetailModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailModal.xib; sourceTree = "<group>"; };
+		00257CB4282329F9007DCBE1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		00257CB628232A26007DCBE1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		00257CB828232B26007DCBE1 /* DetailSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSingleton.swift; sourceTree = "<group>"; };
 		009DD925281C247800023A4D /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		009DD9362822C5FE00023A4D /* MainTabbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewModel.swift; sourceTree = "<group>"; };
 		009DD9382822C60900023A4D /* MainTabbarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarModel.swift; sourceTree = "<group>"; };
@@ -128,6 +138,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00257CAF2823298D007DCBE1 /* DetailModal */ = {
+			isa = PBXGroup;
+			children = (
+				00257CB0282329C1007DCBE1 /* DetailModal.swift */,
+				00257CB2282329CC007DCBE1 /* DetailModal.xib */,
+				00257CB828232B26007DCBE1 /* DetailSingleton.swift */,
+			);
+			path = DetailModal;
+			sourceTree = "<group>";
+		};
 		009DD9352822C5E400023A4D /* MainTabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,14 +214,15 @@
 			isa = PBXGroup;
 			children = (
 				00257CAA28232355007DCBE1 /* Localizable.strings */,
-				00EFAD16281C1D030016A850 /* Utils */,
 				00EFACE6281C19A90016A850 /* AppDelegate.swift */,
 				00EFACE8281C19A90016A850 /* SceneDelegate.swift */,
 				00EFACEA281C19A90016A850 /* ViewController.swift */,
 				009DD9402822D96700023A4D /* CuriosityModul */,
+				00257CAF2823298D007DCBE1 /* DetailModal */,
 				009DD9412822DA9100023A4D /* Opportunity */,
 				009DD9482822DCDE00023A4D /* Spirint */,
 				009DD9352822C5E400023A4D /* MainTabbar */,
+				00EFAD16281C1D030016A850 /* Utils */,
 				00EFACEC281C19A90016A850 /* Main.storyboard */,
 				00EFACEF281C19AB0016A850 /* Assets.xcassets */,
 				00EFACF1281C19AB0016A850 /* LaunchScreen.storyboard */,
@@ -234,6 +255,8 @@
 				00EFAD18281C1D180016A850 /* NetworkHelpers.swift */,
 				009DD94F2822E2A800023A4D /* BaseModel.swift */,
 				00257CA328231ED6007DCBE1 /* CVCell.swift */,
+				00257CB4282329F9007DCBE1 /* Extensions.swift */,
+				00257CB628232A26007DCBE1 /* Helpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -375,6 +398,7 @@
 				00EFACF3281C19AB0016A850 /* LaunchScreen.storyboard in Resources */,
 				00EFACF0281C19AB0016A850 /* Assets.xcassets in Resources */,
 				00EFACEE281C19A90016A850 /* Main.storyboard in Resources */,
+				00257CB3282329CC007DCBE1 /* DetailModal.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,19 +530,23 @@
 				009DD94C2822DCF600023A4D /* SpirintViewModel.swift in Sources */,
 				009DD94E2822DCFD00023A4D /* SpirintModel.swift in Sources */,
 				009DD94A2822DCEE00023A4D /* SpirintViewController.swift in Sources */,
+				00257CB1282329C1007DCBE1 /* DetailModal.swift in Sources */,
 				00EFACE7281C19A90016A850 /* AppDelegate.swift in Sources */,
 				009DD9472822DACB00023A4D /* OpportunityModel.swift in Sources */,
 				009DD93F2822D96200023A4D /* CuriosityModel.swift in Sources */,
 				009DD9392822C60900023A4D /* MainTabbarModel.swift in Sources */,
 				009DD9502822E2A800023A4D /* BaseModel.swift in Sources */,
 				009DD926281C247800023A4D /* MainTabbarController.swift in Sources */,
+				00257CB728232A26007DCBE1 /* Helpers.swift in Sources */,
 				00EFACE9281C19A90016A850 /* SceneDelegate.swift in Sources */,
 				00EFAD1A281C1D180016A850 /* NetworkHelpers.swift in Sources */,
+				00257CB5282329F9007DCBE1 /* Extensions.swift in Sources */,
 				00257CA428231ED6007DCBE1 /* CVCell.swift in Sources */,
 				009DD9432822DAB400023A4D /* OpportunityViewController.swift in Sources */,
 				00EFAD19281C1D180016A850 /* Constant.swift in Sources */,
 				009DD93B2822D94A00023A4D /* CuriosityViewController.swift in Sources */,
 				009DD9372822C5FE00023A4D /* MainTabbarViewModel.swift in Sources */,
+				00257CB928232B26007DCBE1 /* DetailSingleton.swift in Sources */,
 				009DD9452822DAC000023A4D /* OpportunityViewModel.swift in Sources */,
 				009DD93D2822D95800023A4D /* CuriosityViewModel.swift in Sources */,
 			);

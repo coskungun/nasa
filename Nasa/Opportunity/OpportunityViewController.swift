@@ -79,6 +79,8 @@ class OpportunityViewController: UIViewController,OpportunityViewModelDelegate {
     }
     
     func setupUI(){
+        
+        self.lblNoData.text = NSLocalizedString("NoData", comment: "")
         pageControl.alpha = 0
         collectionView.alpha = 0
         view.addSubview(collectionView)
@@ -114,6 +116,7 @@ extension OpportunityViewController: CarouselCollectionViewDataSource {
     
     func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, didSelectItemAt index: Int) {
         print("Did select item at \(index)")
+        DetailSingleton.sharedInstance.showModal(vc: self, pData: viewModel.arrData?[index])
     }
     
     func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, didDisplayItemAt index: Int) {
