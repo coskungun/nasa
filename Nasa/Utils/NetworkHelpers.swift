@@ -22,13 +22,41 @@ public enum Error: Swift.Error {
 }
 
 protocol NetworkServiceProtocol {
-    func getAllData(complation: @escaping (ApiResult<InfinityModel>) -> Void) // n tpinde alınması sağlanabilir.
+    func getAllDataCuriosity(complation: @escaping (ApiResult<InfinityModel>) -> Void) // n tpinde alınması sağlanabilir.
+    
+    func getAllDataOpportunity(complation: @escaping (ApiResult<InfinityModel>) -> Void) // n tpinde alınması sağlanabilir.
 }
  
 public struct NetworkHelper: NetworkServiceProtocol {
-    func getAllData(complation: @escaping (ApiResult<InfinityModel>) -> Void) {
+    func getAllDataCuriosity(complation: @escaping (ApiResult<InfinityModel>) -> Void) {
         
         AF.request(Constant.API_URL+Constant.API_ROVER_TYPE_CURIOSITY+Constant.API_VISIBLE_TYPE+Constant.API_KEY+Constant.API_PAGINATION,refreshCache:false).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success:
+                do {
+        
+                    if let jsonDecode = try JSONDecoder().decode(InfinityModel?.self, from: response.data ?? Data.init())
+                    {
+                        complation(.success(jsonDecode))
+                    }
+                } catch let error {
+                    complation(.failure(.serializationError(internal: error)))
+                }
+            case .failure(let error):
+                switch error {
+                case .sessionTaskFailed(let urlError as URLError) where urlError.code == .timedOut:
+                    complation(.timeOutFailure("Timeout request!"))
+                default:
+                    print("Other error!")
+                }
+            }
+            
+        },autoClearCache:false).cache(maxAge: 10)
+    }
+    
+    func getAllDataOpportunity(complation: @escaping (ApiResult<InfinityModel>) -> Void) {
+        
+        AF.request(Constant.API_URL+Constant.API_ROVER_TYPE_OPPERTUNITY+Constant.API_VISIBLE_TYPE+Constant.API_KEY+Constant.API_PAGINATION,refreshCache:false).responseJSON(completionHandler: { response in
             switch response.result {
             case .success:
                 do {

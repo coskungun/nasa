@@ -17,7 +17,7 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
         viewModel = MainTabbarViewModel()
         viewModel.delegate = self
         viewModel.load(view: self.view)
-        viewModel.fetchData()
+        //viewModel.fetchData()
         setupUI()
         
     }

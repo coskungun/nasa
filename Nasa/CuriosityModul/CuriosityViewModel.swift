@@ -1,5 +1,5 @@
 //
-//  MainTabbarViewModel.swift
+//  CuriosityViewModel.swift
 //  Nasa
 //
 //  Created by Coşkun Güngör on 4.05.2022.
@@ -8,30 +8,27 @@
 import Foundation
 import UIKit
 
-protocol MainTabbarViewModelProtocol {
-    var delegate: MainTabbarViewModelDelegate? { get set }
+protocol CuriosityViewModelProtocol {
+    var delegate: CuriosityViewModelDelegate? { get set }
     func load(view:UIView)
 }
 
-protocol MainTabbarViewModelDelegate {
-    func handleViewModelOutput(_ output: MainTabbarModelViewModelOutput)
+protocol CuriosityViewModelDelegate {
+    func handleViewModelOutput(_ output: CuriosityModelViewModelOutput)
 }
 
-enum MainTabbarModelViewModelOutput: Equatable {
+enum CuriosityModelViewModelOutput: Equatable {
     case updateTitle(String)
     case reloadData
     case isErrorConnection(String)
 }
 
-
-
-
-class MainTabbarViewModel:MainTabbarViewModelProtocol
+class CuriosityViewModel:CuriosityViewModelProtocol
 {
-    var delegate: MainTabbarViewModelDelegate?
+    var delegate: CuriosityViewModelDelegate?
     var networkHelper:NetworkHelper? = NetworkHelper() //network operation -> optional (isteğe bağlı)
     var spinner = UIActivityIndicatorView.init(style: .large)
-    
+    var arrData:[PhotoObject]?
     
     func load(view: UIView) {
         notify(.updateTitle("Infinity"))
@@ -41,7 +38,7 @@ class MainTabbarViewModel:MainTabbarViewModelProtocol
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
-    private func notify(_ output: MainTabbarModelViewModelOutput) {
+    private func notify(_ output: CuriosityModelViewModelOutput) {
         delegate?.handleViewModelOutput(output)
     }
         
@@ -53,7 +50,7 @@ class MainTabbarViewModel:MainTabbarViewModelProtocol
             switch result
             {
             case .success(let response):
-                Constant.arrData = response.photos
+                self.arrData = response.photos
                 self.showHideIndicator(isStart: false)
                 self.notify(.reloadData)
             case .failure(let error):

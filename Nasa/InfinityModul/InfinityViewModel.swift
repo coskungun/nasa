@@ -1,37 +1,34 @@
 //
-//  MainTabbarViewModel.swift
+//  InfinityViewModel.swift
 //  Nasa
 //
-//  Created by Coşkun Güngör on 4.05.2022.
+//  Created by Coşkun Güngör on 29.04.2022.
 //
 
 import Foundation
 import UIKit
 
-protocol MainTabbarViewModelProtocol {
-    var delegate: MainTabbarViewModelDelegate? { get set }
+protocol InfinityViewModelProtocol {
+    var delegate: InfinityViewModelDelegate? { get set }
     func load(view:UIView)
 }
 
-protocol MainTabbarViewModelDelegate {
-    func handleViewModelOutput(_ output: MainTabbarModelViewModelOutput)
+protocol InfinityViewModelDelegate {
+    func handleViewModelOutput(_ output: InfinityModelViewModelOutput)
 }
 
-enum MainTabbarModelViewModelOutput: Equatable {
+enum InfinityModelViewModelOutput: Equatable {
     case updateTitle(String)
     case reloadData
     case isErrorConnection(String)
 }
 
-
-
-
-class MainTabbarViewModel:MainTabbarViewModelProtocol
+class InfinityViewModel:InfinityViewModelProtocol
 {
-    var delegate: MainTabbarViewModelDelegate?
+    var delegate: InfinityViewModelDelegate?
     var networkHelper:NetworkHelper? = NetworkHelper() //network operation -> optional (isteğe bağlı)
     var spinner = UIActivityIndicatorView.init(style: .large)
-    
+    var arrData:[PhotoObject]?
     
     func load(view: UIView) {
         notify(.updateTitle("Infinity"))
@@ -41,7 +38,7 @@ class MainTabbarViewModel:MainTabbarViewModelProtocol
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
-    private func notify(_ output: MainTabbarModelViewModelOutput) {
+    private func notify(_ output: InfinityModelViewModelOutput) {
         delegate?.handleViewModelOutput(output)
     }
         
@@ -53,7 +50,7 @@ class MainTabbarViewModel:MainTabbarViewModelProtocol
             switch result
             {
             case .success(let response):
-                Constant.arrData = response.photos
+                self.arrData = response.photos
                 self.showHideIndicator(isStart: false)
                 self.notify(.reloadData)
             case .failure(let error):
