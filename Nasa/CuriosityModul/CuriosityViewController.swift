@@ -12,6 +12,7 @@ import Kingfisher
 
 
 class CuriosityViewController: UIViewController,InfinityViewModelDelegate {
+    @IBOutlet weak var lblNoData: UILabel!
     var viewModel: InfinityViewModel = InfinityViewModel()
     let pageControl = UIPageControl()
     let collectionView = CarouselCollectionView(frame: .zero, collectionViewFlowLayout: UICollectionViewFlowLayout())
@@ -28,8 +29,29 @@ class CuriosityViewController: UIViewController,InfinityViewModelDelegate {
     }
     
     @objc func notdata(notification: NSNotification){
+        viewModel.arrData = viewModel.arrCache
         if let strData = notification.userInfo?["data"] as? String {
-            print("strdata \(strData)")
+            self.lblNoData.alpha = 0
+            collectionView.alpha = 1
+            pageControl.alpha = 1
+            if strData == "ALL" {
+                pageControl.numberOfPages = viewModel.arrData?.count ?? 0
+                collectionView.reloadData()
+                return
+            }
+            let namesWithL = viewModel.arrData?.filter{ $0.camera?.name! == strData }
+            if namesWithL?.count != 0 {
+                collectionView.alpha = 1
+                pageControl.alpha = 1
+                viewModel.arrData = namesWithL
+                pageControl.numberOfPages = viewModel.arrData?.count ?? 0
+                collectionView.reloadData()
+            }else {
+                self.lblNoData.alpha = 1
+                collectionView.alpha = 0
+                pageControl.alpha = 0
+            }
+            
           }
     }
     

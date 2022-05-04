@@ -29,6 +29,7 @@ class CuriosityViewModel:CuriosityViewModelProtocol
     var networkHelper:NetworkHelper? = NetworkHelper() //network operation -> optional (isteğe bağlı)
     var spinner = UIActivityIndicatorView.init(style: .large)
     var arrData:[PhotoObject]?
+    var arrCache:[PhotoObject]?
     
     func load(view: UIView) {
         notify(.updateTitle("Curiosity"))
@@ -50,6 +51,7 @@ class CuriosityViewModel:CuriosityViewModelProtocol
             switch result
             {
             case .success(let response):
+                self.arrCache = response.photos
                 self.arrData = response.photos
                 self.showHideIndicator(isStart: false)
                 self.notify(.reloadData)

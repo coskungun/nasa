@@ -15,10 +15,25 @@
                     <view key="view" contentMode="scaleToFill" id="JlH-GG-Fcd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data !!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNk-9b-JPi">
+                                <rect key="frame" x="165" y="440" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ohc-B4-fPC"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="XNk-9b-JPi" firstAttribute="centerY" secondItem="Ohc-B4-fPC" secondAttribute="centerY" id="7kp-1h-XjY"/>
+                            <constraint firstItem="XNk-9b-JPi" firstAttribute="centerX" secondItem="Ohc-B4-fPC" secondAttribute="centerX" constant="-1.5" id="UQb-y5-wQ2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Afi-wj-VGG"/>
+                    <connections>
+                        <outlet property="lblNoData" destination="XNk-9b-JPi" id="h7m-d9-AUp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uY-pL-Err" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -31,10 +46,25 @@
                     <view key="view" contentMode="scaleToFill" id="tGW-Sb-dq1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data !!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR8-KU-YIB">
+                                <rect key="frame" x="166.5" y="440" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="y64-bF-YdD"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="zR8-KU-YIB" firstAttribute="centerX" secondItem="y64-bF-YdD" secondAttribute="centerX" id="5aH-WE-MDN"/>
+                            <constraint firstItem="zR8-KU-YIB" firstAttribute="centerY" secondItem="y64-bF-YdD" secondAttribute="centerY" id="Rtc-He-cbY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="l0j-bL-BFn"/>
+                    <connections>
+                        <outlet property="lblNoData" destination="zR8-KU-YIB" id="9mZ-2U-Oq7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CkZ-jA-gEw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,10 +97,25 @@
                     <view key="view" contentMode="scaleToFill" id="DXv-29-OB0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data !!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sg-5R-p2t">
+                                <rect key="frame" x="165" y="440" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Lem-hn-Eu5"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstItem="2sg-5R-p2t" firstAttribute="centerY" secondItem="Lem-hn-Eu5" secondAttribute="centerY" id="4UJ-au-2b7"/>
+                            <constraint firstItem="2sg-5R-p2t" firstAttribute="centerX" secondItem="Lem-hn-Eu5" secondAttribute="centerX" constant="-1.5" id="wJo-ZX-vj6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Trv-Fl-OCN"/>
+                    <connections>
+                        <outlet property="lblNoData" destination="2sg-5R-p2t" id="M1I-Kj-9To"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9d-8l-HqO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
