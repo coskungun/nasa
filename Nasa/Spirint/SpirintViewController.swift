@@ -1,5 +1,5 @@
 //
-//  OpportunityViewController.swift
+//  SpirintViewController.swift
 //  Nasa
 //
 //  Created by Coşkun Güngör on 4.05.2022.
@@ -11,20 +11,21 @@ import InfiniteCarouselCollectionView
 import Kingfisher
 
 
-class OpportunityViewController: UIViewController,OpportunityViewModelDelegate {
-    var viewModel: OpportunityViewModel = OpportunityViewModel()
+class SpirintViewController: UIViewController,SpirintViewModelDelegate {
+    var viewModel: SpirintViewModel = SpirintViewModel()
     let pageControl = UIPageControl()
     let collectionView = CarouselCollectionView(frame: .zero, collectionViewFlowLayout: UICollectionViewFlowLayout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
-        viewModel = OpportunityViewModel()
+        viewModel = SpirintViewModel()
         viewModel.delegate = self
         viewModel.load(view: self.view)
         viewModel.fetchData()
-        NotificationCenter.default.addObserver(self, selector: #selector(notdata(notification:)), name: Notification.Name("Opportunity"), object: nil)
-       
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(notdata(notification:)), name: Notification.Name("Spirint"), object: nil)
+        
         setupUI()
     }
     
@@ -42,7 +43,7 @@ class OpportunityViewController: UIViewController,OpportunityViewModelDelegate {
         self.view.bringSubviewToFront(pageControl)
     }
     
-    func handleViewModelOutput(_ output: OpportunityModelViewModelOutput) {
+    func handleViewModelOutput(_ output: SpirintModelViewModelOutput) {
         switch output {
         case .isErrorConnection( _):
             print("Internet connection error message")
@@ -77,7 +78,7 @@ class OpportunityViewController: UIViewController,OpportunityViewModelDelegate {
 }
 
 
-extension OpportunityViewController: CarouselCollectionViewDataSource {
+extension SpirintViewController: CarouselCollectionViewDataSource {
     var numberOfItems: Int {
         return viewModel.arrData?.count ?? 0
     }

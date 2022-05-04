@@ -31,7 +31,7 @@ class OpportunityViewModel:OpportunityViewModelProtocol
     var arrData:[PhotoObject]?
     
     func load(view: UIView) {
-        notify(.updateTitle("Infinity"))
+        notify(.updateTitle("Oppurtunity"))
         spinner.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(spinner)
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

@@ -90,8 +90,8 @@
             filePath = "Nasa/MainTabbar/MainTabbarController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "tabBar(_:didSelect:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -99,16 +99,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5692F83E-21A4-45FE-9654-CDDE4C4C52A8"
+            uuid = "F6E229F7-120D-472A-9036-EA79359F7A74"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Nasa/MainTabbar/MainTabbarController.swift"
+            filePath = "Nasa/CuriosityModul/CuriosityViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "createActionSheet(output:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "notdata(notification:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

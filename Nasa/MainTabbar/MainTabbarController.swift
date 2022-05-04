@@ -12,12 +12,12 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
     var viewModel: MainTabbarViewModel = MainTabbarViewModel()
     var viewFilterMenu:UIView!
     var tabbarSelectedIndex = 0
+    var strTitle:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MainTabbarViewModel()
         viewModel.delegate = self
         viewModel.load(view: self.view)
-        //viewModel.fetchData()
         setupUI()
         
     }
@@ -26,17 +26,17 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
         viewFilterMenu.alpha = 1
         if item == (self.tabBar.items!)[0]{
             tabbarSelectedIndex = 0
+            self.strTitle.text = "Curiosity"
         }
         if item == (self.tabBar.items!)[1]{
             tabbarSelectedIndex = 1
+            self.strTitle.text = "Opportunity"
         }
         if item == (self.tabBar.items!)[2]{
             tabbarSelectedIndex = 2
+            self.strTitle.text = "Spirint"
         }
-        if item == (self.tabBar.items!)[3]{
-            viewFilterMenu.alpha = 0
-            tabbarSelectedIndex = 3
-        }
+    
     }
     
     func setupUI() {
@@ -55,9 +55,15 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
             }
             
         }))
-        filterButton.frame = CGRect.init(x: viewFilterMenu.frame.size.width - 100, y: 30, width: 100, height: 50)
+        filterButton.frame = CGRect.init(x: viewFilterMenu.frame.size.width - 100, y: 40, width: 100, height: 40)
         filterButton.backgroundColor = .clear
         viewFilterMenu.addSubview(filterButton)
+        
+        self.strTitle = UILabel.init(frame: CGRect.init(x: 0, y: 40, width: self.view.frame.size.width, height: 40))
+        self.strTitle.text = "Curiosity"
+        self.strTitle.textAlignment = .center
+        viewFilterMenu.addSubview(self.strTitle)
+        
     }
     
     func createActionSheet(output:Constant.FilterOutput){
@@ -67,19 +73,23 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
         case .curiosity:
             for i in 0...Constant.arrFilterCuriosity.count - 1 {
                 alert.addAction(UIAlertAction(title: Constant.arrFilterCuriosity[i], style: .default , handler:{ (UIAlertAction)in
-                    print(Constant.arrFilterCuriosity[i])
+                    let data:[String:String] = ["data":Constant.arrFilterCuriosity[i]]
+                    NotificationCenter.default.post(name: NSNotification.Name("Curiosity"), object: nil,userInfo:data )
                 }))
             }
         case .opportunity:
             for i in 0...Constant.arrFilterOpportunity.count - 1 {
                 alert.addAction(UIAlertAction(title: Constant.arrFilterOpportunity[i], style: .default , handler:{ (UIAlertAction)in
-                    print(Constant.arrFilterOpportunity[i])
+                    
+                    let data:[String:String] = ["data":Constant.arrFilterOpportunity[i]]
+                    NotificationCenter.default.post(name: NSNotification.Name("Opportunity"), object: nil,userInfo:data )
                 }))
             }
         case .spirit:
             for i in 0...Constant.arrFilterSpirit.count - 1 {
                 alert.addAction(UIAlertAction(title: Constant.arrFilterSpirit[i], style: .default , handler:{ (UIAlertAction)in
-                    print(Constant.arrFilterSpirit[i])
+                    let data:[String:String] = ["data":Constant.arrFilterOpportunity[i]]
+                    NotificationCenter.default.post(name: NSNotification.Name("Spirint"), object: nil,userInfo:data )
                 }))
             }
         }

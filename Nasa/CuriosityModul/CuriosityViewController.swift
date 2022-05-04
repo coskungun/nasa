@@ -23,7 +23,14 @@ class CuriosityViewController: UIViewController,InfinityViewModelDelegate {
         viewModel.delegate = self
         viewModel.load(view: self.view)
         viewModel.fetchData()
+        NotificationCenter.default.addObserver(self, selector: #selector(notdata(notification:)), name: Notification.Name("Curiosity"), object: nil)
         setupUI()
+    }
+    
+    @objc func notdata(notification: NSNotification){
+        if let strData = notification.userInfo?["data"] as? String {
+            print("strdata \(strData)")
+          }
     }
     
     override func viewWillAppear(_ animated: Bool) {

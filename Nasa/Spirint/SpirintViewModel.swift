@@ -1,5 +1,5 @@
 //
-//  CuriosityViewModel.swift
+//  SpirintViewModel.swift
 //  Nasa
 //
 //  Created by Coşkun Güngör on 4.05.2022.
@@ -8,44 +8,44 @@
 import Foundation
 import UIKit
 
-protocol CuriosityViewModelProtocol {
-    var delegate: CuriosityViewModelDelegate? { get set }
+protocol SpirintViewModelProtocol {
+    var delegate: SpirintViewModelDelegate? { get set }
     func load(view:UIView)
 }
 
-protocol CuriosityViewModelDelegate {
-    func handleViewModelOutput(_ output: CuriosityModelViewModelOutput)
+protocol SpirintViewModelDelegate {
+    func handleViewModelOutput(_ output: SpirintModelViewModelOutput)
 }
 
-enum CuriosityModelViewModelOutput: Equatable {
+enum SpirintModelViewModelOutput: Equatable {
     case updateTitle(String)
     case reloadData
     case isErrorConnection(String)
 }
 
-class CuriosityViewModel:CuriosityViewModelProtocol
+class SpirintViewModel:SpirintViewModelProtocol
 {
-    var delegate: CuriosityViewModelDelegate?
+    var delegate: SpirintViewModelDelegate?
     var networkHelper:NetworkHelper? = NetworkHelper() //network operation -> optional (isteğe bağlı)
     var spinner = UIActivityIndicatorView.init(style: .large)
     var arrData:[PhotoObject]?
     
     func load(view: UIView) {
-        notify(.updateTitle("Curiosity"))
+        notify(.updateTitle("Spirint"))
         spinner.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(spinner)
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
-    private func notify(_ output: CuriosityModelViewModelOutput) {
+    private func notify(_ output: SpirintModelViewModelOutput) {
         delegate?.handleViewModelOutput(output)
     }
         
     func fetchData()
     {
         showHideIndicator(isStart: true)
-        networkHelper?.getAllDataCuriosity(complation: {
+        networkHelper?.getAllDataSpirint(complation: {
             result in
             switch result
             {

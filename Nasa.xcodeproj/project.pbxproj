@@ -19,6 +19,10 @@
 		009DD9432822DAB400023A4D /* OpportunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9422822DAB400023A4D /* OpportunityViewController.swift */; };
 		009DD9452822DAC000023A4D /* OpportunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9442822DAC000023A4D /* OpportunityViewModel.swift */; };
 		009DD9472822DACB00023A4D /* OpportunityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9462822DACB00023A4D /* OpportunityModel.swift */; };
+		009DD94A2822DCEE00023A4D /* SpirintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9492822DCEE00023A4D /* SpirintViewController.swift */; };
+		009DD94C2822DCF600023A4D /* SpirintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD94B2822DCF600023A4D /* SpirintViewModel.swift */; };
+		009DD94E2822DCFD00023A4D /* SpirintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD94D2822DCFD00023A4D /* SpirintModel.swift */; };
+		009DD9502822E2A800023A4D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD94F2822E2A800023A4D /* BaseModel.swift */; };
 		00EFACE7281C19A90016A850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFACE6281C19A90016A850 /* AppDelegate.swift */; };
 		00EFACE9281C19A90016A850 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFACE8281C19A90016A850 /* SceneDelegate.swift */; };
 		00EFACEB281C19A90016A850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFACEA281C19A90016A850 /* ViewController.swift */; };
@@ -65,6 +69,10 @@
 		009DD9422822DAB400023A4D /* OpportunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityViewController.swift; sourceTree = "<group>"; };
 		009DD9442822DAC000023A4D /* OpportunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityViewModel.swift; sourceTree = "<group>"; };
 		009DD9462822DACB00023A4D /* OpportunityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityModel.swift; sourceTree = "<group>"; };
+		009DD9492822DCEE00023A4D /* SpirintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirintViewController.swift; sourceTree = "<group>"; };
+		009DD94B2822DCF600023A4D /* SpirintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirintViewModel.swift; sourceTree = "<group>"; };
+		009DD94D2822DCFD00023A4D /* SpirintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirintModel.swift; sourceTree = "<group>"; };
+		009DD94F2822E2A800023A4D /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		00EFACE3281C19A90016A850 /* Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EFACE6281C19A90016A850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00EFACE8281C19A90016A850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +167,16 @@
 			path = Opportunity;
 			sourceTree = "<group>";
 		};
+		009DD9482822DCDE00023A4D /* Spirint */ = {
+			isa = PBXGroup;
+			children = (
+				009DD9492822DCEE00023A4D /* SpirintViewController.swift */,
+				009DD94B2822DCF600023A4D /* SpirintViewModel.swift */,
+				009DD94D2822DCFD00023A4D /* SpirintModel.swift */,
+			);
+			path = Spirint;
+			sourceTree = "<group>";
+		};
 		00EFACDA281C19A90016A850 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +209,7 @@
 				009DD9402822D96700023A4D /* CuriosityModul */,
 				009DD929281C27ED00023A4D /* InfinityModul */,
 				009DD9412822DA9100023A4D /* Opportunity */,
+				009DD9482822DCDE00023A4D /* Spirint */,
 				009DD9352822C5E400023A4D /* MainTabbar */,
 				00EFACEC281C19A90016A850 /* Main.storyboard */,
 				00EFACEF281C19AB0016A850 /* Assets.xcassets */,
@@ -222,6 +241,7 @@
 			children = (
 				00EFAD17281C1D180016A850 /* Constant.swift */,
 				00EFAD18281C1D180016A850 /* NetworkHelpers.swift */,
+				009DD94F2822E2A800023A4D /* BaseModel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -490,10 +510,14 @@
 			files = (
 				009DD92B281C280300023A4D /* InfinityViewModel.swift in Sources */,
 				00EFACEB281C19A90016A850 /* ViewController.swift in Sources */,
+				009DD94C2822DCF600023A4D /* SpirintViewModel.swift in Sources */,
+				009DD94E2822DCFD00023A4D /* SpirintModel.swift in Sources */,
+				009DD94A2822DCEE00023A4D /* SpirintViewController.swift in Sources */,
 				00EFACE7281C19A90016A850 /* AppDelegate.swift in Sources */,
 				009DD9472822DACB00023A4D /* OpportunityModel.swift in Sources */,
 				009DD93F2822D96200023A4D /* CuriosityModel.swift in Sources */,
 				009DD9392822C60900023A4D /* MainTabbarModel.swift in Sources */,
+				009DD9502822E2A800023A4D /* BaseModel.swift in Sources */,
 				009DD926281C247800023A4D /* MainTabbarController.swift in Sources */,
 				00EFACE9281C19A90016A850 /* SceneDelegate.swift in Sources */,
 				00EFAD1A281C1D180016A850 /* NetworkHelpers.swift in Sources */,

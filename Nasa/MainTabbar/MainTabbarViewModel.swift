@@ -34,7 +34,6 @@ class MainTabbarViewModel:MainTabbarViewModelProtocol
     
     
     func load(view: UIView) {
-        notify(.updateTitle("Infinity"))
         spinner.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(spinner)
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
