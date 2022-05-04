@@ -20,5 +20,18 @@ class Helpers: NSObject {
         return dateFormatterPrint.string(from: date!);
     }
 
+    public static func returnStringdate(returndateFormat:String) -> String
+    {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = returndateFormat
+
+        let date:Date = .init()
+        return dateFormatterPrint.string(from: date)
+    }
+    
+    
 }
 

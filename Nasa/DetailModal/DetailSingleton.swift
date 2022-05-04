@@ -33,7 +33,8 @@ final class DetailSingleton: NSObject, DetailModalDelegate {
         myView.layer.cornerRadius = 6
         myView.frame = cRect
         myView.tag = 10203050
-        myView.setupView(pData: pData)
+        myView.item = pData
+        //myView.setupView(pData: pData)
         myView.center = CGPoint(x: vc.view.bounds.maxX/2, y: vc.view.bounds.maxY/2)
         myView.delegate = self
         vc.view.addSubview(myView)
