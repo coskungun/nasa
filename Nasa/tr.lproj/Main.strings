@@ -1,0 +1,20 @@
+
+/* Class = "UILabel"; text = "No Data !!!"; ObjectID = "2sg-5R-p2t"; */
+"2sg-5R-p2t.text" = "No Data Yok !!!";
+
+/* Class = "UILabel"; text = "No Data !!!"; ObjectID = "XNk-9b-JPi"; */
+"XNk-9b-JPi.text" = "Data Yok !!!";
+
+/* Class = "UITabBarItem"; title = "Curiosity"; ObjectID = "csN-TQ-eUR"; */
+"csN-TQ-eUR.title" = "Curiosity";
+
+/* Class = "UITabBarItem"; title = "Spirit"; ObjectID = "fXK-Nk-eEg"; */
+"fXK-Nk-eEg.title" = "Spirit";
+
+/* Class = "UITabBarItem"; title = "Opportunity"; ObjectID = "gjq-6a-kW7"; */
+"gjq-6a-kW7.title" = "Opportunity";
+
+/* Class = "UILabel"; text = "No Data !!!"; ObjectID = "zR8-KU-YIB"; */
+"zR8-KU-YIB.text" = "Data Yok !!!";
+
+"lbldissmis" = "İptal"

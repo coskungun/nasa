@@ -19,9 +19,9 @@ struct Constant
     static let API_PAGINATION = "&page=1"
     static let REQUEST_TIMEOUT:TimeInterval = 30;
     static var arrData:[PhotoObject]?
-    static var arrFilterCuriosity = ["ALL","FHAZ","RHAZ","MAST","CHEMCAM","MAHLI","MARDI","NAVCAM"]
-    static var arrFilterOpportunity = ["ALL","FHAZ","RHAZ","NAVCAM","PANCAM","MINITES"]
-    static var arrFilterSpirit = ["ALL","FHAZ","RHAZ","NAVCAM","PANCAM","MINITES"]
+    static var arrFilterCuriosity = [NSLocalizedString("lblAll", comment: ""),"FHAZ","RHAZ","MAST","CHEMCAM","MAHLI","MARDI","NAVCAM"]
+    static var arrFilterOpportunity = [NSLocalizedString("lblAll", comment: ""),"FHAZ","RHAZ","NAVCAM","PANCAM","MINITES"]
+    static var arrFilterSpirit = [NSLocalizedString("lblAll", comment: ""),"FHAZ","RHAZ","NAVCAM","PANCAM","MINITES"]
     
     
     enum FilterOutput: Equatable {

@@ -45,7 +45,7 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
         self.viewFilterMenu.backgroundColor = .white
         self.view.addSubview(self.viewFilterMenu)
         
-        let filterButton = UIButton(type: .system, primaryAction: UIAction(title: "Filter", handler: { _ in
+        let filterButton = UIButton(type: .system, primaryAction: UIAction(title: NSLocalizedString("lblFilter", comment: ""), handler: { _ in
             if self.tabbarSelectedIndex == 0 {
                 self.createActionSheet(output: .curiosity)
             }else if self.tabbarSelectedIndex == 1 {
@@ -67,7 +67,7 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
     }
     
     func createActionSheet(output:Constant.FilterOutput){
-        let alert = UIAlertController(title: "Camera Filter", message: "Please Select an Camera", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: NSLocalizedString("lblFilterTitle", comment: ""), message: NSLocalizedString("lblFilterContent", comment: ""), preferredStyle: .actionSheet)
         
         switch output {
         case .curiosity:
@@ -94,7 +94,7 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
             }
         }
     
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("lbldissmis", comment: ""), style: .cancel, handler:{ (UIAlertAction)in
             print("User click Dismiss button")
         }))
         

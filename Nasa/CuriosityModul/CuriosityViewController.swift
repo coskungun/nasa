@@ -34,7 +34,7 @@ class CuriosityViewController: UIViewController,CuriosityViewModelDelegate {
             self.lblNoData.alpha = 0
             collectionView.alpha = 1
             pageControl.alpha = 1
-            if strData == "ALL" {
+            if strData == "ALL" || strData == "HEPSİ" {
                 pageControl.numberOfPages = viewModel.arrData?.count ?? 0
                 collectionView.reloadData()
                 return
