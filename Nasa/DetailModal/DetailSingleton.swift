@@ -7,16 +7,20 @@
 
 import Foundation
 import UIKit
-
+import FirebaseAnalytics
 final class DetailSingleton: NSObject, DetailModalDelegate {
- 
+    
     weak var vcMain:UIViewController?
-   static let sharedInstance = DetailSingleton()
-
-   private override init() { }
-
+    static let sharedInstance = DetailSingleton()
+    
+    private override init() { }
+    
+    func createEvent() {
+        Analytics.logEvent("create_modal", parameters: nil)
+    }
+    
     func showModal(vc:UIViewController,pData:PhotoObject?) {
-        
+        createEvent()
         vcMain = vc
         let viewBackround:UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: vc.view.frame.size.width, height: vc.view.frame.size.height))
         viewBackround.backgroundColor = .black
@@ -28,7 +32,7 @@ final class DetailSingleton: NSObject, DetailModalDelegate {
         cRect = CGRect.init(x: 0, y: 0, width: vc.view.frame.size
             .width - 20, height: vc.view.frame.size.height-300)
         
-         
+        
         let myView:DetailModal = DetailModal().loadNib() as! DetailModal
         myView.layer.cornerRadius = 6
         myView.frame = cRect
@@ -52,28 +56,28 @@ final class DetailSingleton: NSObject, DetailModalDelegate {
     }
     
     private func dismissView(vc:UIViewController)
-       {
-           for view:UIView in vc.view.subviews
-           {
-               if view.isKind(of:DetailModal.self)
-               {
-                   UIView.animate(withDuration: 0.3, animations:{
-                       view.alpha = 0
-                   },completion:{ (finished: Bool) in
-                       view.removeFromSuperview()
-                   })
-                   
-               }
-               if view.tag == 123123
-               {
-                   UIView.animate(withDuration: 0.3, animations:{
-                       view.alpha = 0
-                   },completion:{ (finished: Bool) in
-                       view.removeFromSuperview()
-                   })
-                   
-               }
-               
-           }
-       }
+    {
+        for view:UIView in vc.view.subviews
+        {
+            if view.isKind(of:DetailModal.self)
+            {
+                UIView.animate(withDuration: 0.3, animations:{
+                    view.alpha = 0
+                },completion:{ (finished: Bool) in
+                    view.removeFromSuperview()
+                })
+                
+            }
+            if view.tag == 123123
+            {
+                UIView.animate(withDuration: 0.3, animations:{
+                    view.alpha = 0
+                },completion:{ (finished: Bool) in
+                    view.removeFromSuperview()
+                })
+                
+            }
+            
+        }
+    }
 }

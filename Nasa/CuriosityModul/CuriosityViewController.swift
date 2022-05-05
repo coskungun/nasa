@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import InfiniteCarouselCollectionView
 import Kingfisher
+import FirebaseAnalytics
 
 
 class CuriosityViewController: UIViewController,CuriosityViewModelDelegate {
@@ -26,6 +27,11 @@ class CuriosityViewController: UIViewController,CuriosityViewModelDelegate {
         viewModel.fetchData()
         NotificationCenter.default.addObserver(self, selector: #selector(notdata(notification:)), name: Notification.Name("Curiosity"), object: nil)
         setupUI()
+        createEvent()
+    }
+    
+    func createEvent() {
+        Analytics.logEvent("curiosity_page", parameters: nil)
     }
     
     @objc func notdata(notification: NSNotification){
@@ -77,8 +83,10 @@ class CuriosityViewController: UIViewController,CuriosityViewModelDelegate {
         }
     }
     
+    
+    
     func setupUI(){
-        self.lblNoData.text = NSLocalizedString("NoData", comment: "")
+        self.lblNoData.text = "NoData".localized
         pageControl.alpha = 0
         collectionView.alpha = 0
         view.addSubview(collectionView)

@@ -54,6 +54,6 @@ class DetailModal: UIView {
     
     
     override func awakeFromNib() {
-        self.btnClose.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
+        self.btnClose.setTitle("close".localized, for: .normal)
     }
 }

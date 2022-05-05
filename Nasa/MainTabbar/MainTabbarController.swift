@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseRemoteConfig
+import FirebaseAnalytics
+
 
 class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
     
@@ -19,7 +22,60 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
         viewModel.delegate = self
         viewModel.load(view: self.view)
         setupUI()
+        createRemoteConfig()
         
+    }
+    
+    
+    func createRemoteConfig() {
+        
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let defaultVal : [String:NSObject] = [
+            "isLogin": false as NSObject
+        ]
+        
+        remoteConfig.setDefaults(defaultVal)
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        
+        remoteConfig.fetch(withExpirationDuration: 0, completionHandler: {
+            status,error in
+            
+            if status == .success , error == nil {
+                
+                remoteConfig.activate(completion:{ success,error in
+                    guard error == nil else {
+                        return
+                    }
+                    let value = remoteConfig.configValue(forKey: "isLogin").boolValue
+                    if value == true {
+                        DispatchQueue.main.async {
+                            self.showAlert()
+                        }
+                    }
+                } )
+            }else {
+                print("else")
+            }
+        })
+        
+    }
+    func showAlert(){
+        let alert = UIAlertController(title: "remoteTitle".localized, message: "remoteMessage".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "close".localized, style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -36,7 +92,7 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
             tabbarSelectedIndex = 2
             self.strTitle.text = "Spirint"
         }
-    
+        
     }
     
     func setupUI() {
@@ -45,7 +101,7 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
         self.viewFilterMenu.backgroundColor = .white
         self.view.addSubview(self.viewFilterMenu)
         
-        let filterButton = UIButton(type: .system, primaryAction: UIAction(title: NSLocalizedString("lblFilter", comment: ""), handler: { _ in
+        let filterButton = UIButton(type: .system, primaryAction: UIAction(title:"lblFilter".localized, handler: { _ in
             if self.tabbarSelectedIndex == 0 {
                 self.createActionSheet(output: .curiosity)
             }else if self.tabbarSelectedIndex == 1 {
@@ -67,7 +123,7 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
     }
     
     func createActionSheet(output:Constant.FilterOutput){
-        let alert = UIAlertController(title: NSLocalizedString("lblFilterTitle", comment: ""), message: NSLocalizedString("lblFilterContent", comment: ""), preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "lblFilterTitle".localized, message: "lblFilterContent".localized, preferredStyle: .actionSheet)
         
         switch output {
         case .curiosity:
@@ -93,8 +149,8 @@ class MainTabbarController: UITabBarController, MainTabbarViewModelDelegate {
                 }))
             }
         }
-    
-        alert.addAction(UIAlertAction(title: NSLocalizedString("lbldissmis", comment: ""), style: .cancel, handler:{ (UIAlertAction)in
+        
+        alert.addAction(UIAlertAction(title: "lbldissmis".localized, style: .cancel, handler:{ (UIAlertAction)in
             print("User click Dismiss button")
         }))
         

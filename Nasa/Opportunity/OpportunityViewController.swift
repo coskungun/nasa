@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import InfiniteCarouselCollectionView
 import Kingfisher
-
+import FirebaseAnalytics
 
 class OpportunityViewController: UIViewController,OpportunityViewModelDelegate {
     @IBOutlet weak var lblNoData: UILabel!
@@ -27,6 +27,11 @@ class OpportunityViewController: UIViewController,OpportunityViewModelDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(notdata(notification:)), name: Notification.Name("Opportunity"), object: nil)
        
         setupUI()
+        createEvent()
+    }
+    
+    func createEvent() {
+        Analytics.logEvent("oppurtunity_page", parameters: nil)
     }
     
     @objc func notdata(notification: NSNotification){
@@ -80,7 +85,7 @@ class OpportunityViewController: UIViewController,OpportunityViewModelDelegate {
     
     func setupUI(){
         
-        self.lblNoData.text = NSLocalizedString("NoData", comment: "")
+        self.lblNoData.text = "NoData".localized
         pageControl.alpha = 0
         collectionView.alpha = 0
         view.addSubview(collectionView)

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import InfiniteCarouselCollectionView
 import Kingfisher
-
+import FirebaseAnalytics
 
 class SpirintViewController: UIViewController,SpirintViewModelDelegate {
     @IBOutlet weak var lblNoData: UILabel!
@@ -28,6 +28,11 @@ class SpirintViewController: UIViewController,SpirintViewModelDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(notdata(notification:)), name: Notification.Name("Spirint"), object: nil)
         
         setupUI()
+        createEvent()
+    }
+    
+    func createEvent() {
+        Analytics.logEvent("spirint_page", parameters: nil)
     }
     
     @objc func notdata(notification: NSNotification){
@@ -81,7 +86,7 @@ class SpirintViewController: UIViewController,SpirintViewModelDelegate {
     
     func setupUI(){
         
-        self.lblNoData.text = NSLocalizedString("NoData", comment: "")
+        self.lblNoData.text = "NoData".localized
         pageControl.alpha = 0
         collectionView.alpha = 0
         view.addSubview(collectionView)

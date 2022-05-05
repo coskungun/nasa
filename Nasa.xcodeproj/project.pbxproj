@@ -14,6 +14,7 @@
 		00257CB5282329F9007DCBE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00257CB4282329F9007DCBE1 /* Extensions.swift */; };
 		00257CB728232A26007DCBE1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00257CB628232A26007DCBE1 /* Helpers.swift */; };
 		00257CB928232B26007DCBE1 /* DetailSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00257CB828232B26007DCBE1 /* DetailSingleton.swift */; };
+		0077AA64282443970076B7EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0077AA63282443970076B7EB /* GoogleService-Info.plist */; };
 		009DD926281C247800023A4D /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD925281C247800023A4D /* MainTabbarController.swift */; };
 		009DD9372822C5FE00023A4D /* MainTabbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9362822C5FE00023A4D /* MainTabbarViewModel.swift */; };
 		009DD9392822C60900023A4D /* MainTabbarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009DD9382822C60900023A4D /* MainTabbarModel.swift */; };
@@ -71,6 +72,8 @@
 		00257CB4282329F9007DCBE1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		00257CB628232A26007DCBE1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		00257CB828232B26007DCBE1 /* DetailSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSingleton.swift; sourceTree = "<group>"; };
+		0077AA63282443970076B7EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0077AA66282451160076B7EB /* Nasa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nasa.entitlements; sourceTree = "<group>"; };
 		009DD925281C247800023A4D /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		009DD9362822C5FE00023A4D /* MainTabbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewModel.swift; sourceTree = "<group>"; };
 		009DD9382822C60900023A4D /* MainTabbarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarModel.swift; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 		00EFACE5281C19A90016A850 /* Nasa */ = {
 			isa = PBXGroup;
 			children = (
+				0077AA66282451160076B7EB /* Nasa.entitlements */,
+				0077AA63282443970076B7EB /* GoogleService-Info.plist */,
 				00257CAA28232355007DCBE1 /* Localizable.strings */,
 				00EFACE6281C19A90016A850 /* AppDelegate.swift */,
 				00EFACE8281C19A90016A850 /* SceneDelegate.swift */,
@@ -399,6 +404,7 @@
 				00EFACF0281C19AB0016A850 /* Assets.xcassets in Resources */,
 				00EFACEE281C19A90016A850 /* Main.storyboard in Resources */,
 				00257CB3282329CC007DCBE1 /* DetailModal.xib in Resources */,
+				0077AA64282443970076B7EB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +743,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nasa/Nasa.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y5CH37RV59;
@@ -752,8 +760,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nasa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgungor.nasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -766,6 +775,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nasa/Nasa.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y5CH37RV59;
@@ -781,8 +792,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nasa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgungor.nasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

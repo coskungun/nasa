@@ -4,12 +4,18 @@
 target 'Nasa' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Alamofire', '~> 5.4'
+  pod 'Alamofire', '~> 5.4' #deprecated olan kodlar 6 da düzeltildi.
   pod 'Kingfisher'
   pod 'AlamofireURLCache5'
   pod 'InfiniteCarouselCollectionView'
   # Pods for Nasa
-
+  
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/RemoteConfig'
+  
   target 'NasaTests' do
     inherit! :search_paths
     # Pods for testing
